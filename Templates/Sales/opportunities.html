@@ -215,78 +215,51 @@
                                         <input type="email" class="form-control" placeholder="Entre Email">
                                     </div>
 
-                                    <!-- Phone & Website -->
+                                    <!-- Contact & Stages -->
                                     <div class="col-md-6">
-                                        <label class="form-label">Phone <span class="required">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Entre Phone">
-                                        <div class="phone-hint">Please use with country code. (ex. +91)</div>
+                                        <label class="form-label">Contacts <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Contacts</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="form-label">Website <span class="required">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Entre Website">
+                                        <label class="form-label">Opportunities Stages <span
+                                                class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Opportunities Stages</option>
+                                        </select>
                                     </div>
 
-                                    <!-- Billing Address -->
+
+                                    <!-- Amount & Probabilty -->
                                     <div class="col-md-6">
-                                        <label class="form-label">Billing Address <span
-                                                class="required">*</span></label>
-                                        <input type="text" class="form-control mb-3"
-                                            placeholder="Entre Billing Address">
-                                        <div class="row g-2">
-                                            <div class="col-6"><input type="text" class="form-control"
-                                                    placeholder="Billing City"></div>
-                                            <div class="col-6"><input type="text" class="form-control"
-                                                    placeholder="Billing Country"></div>
-                                            <div class="col-6"><input type="text" class="form-control"
-                                                    placeholder="Billing State"></div>
-                                            <div class="col-6"><input type="text" class="form-control"
-                                                    placeholder="Billing Postal Code"></div>
-                                        </div>
+                                        <label class="form-label">Amount <span class="required">*</span></label>
+                                        <input type="number" class="form-control" placeholder="Entre Amount">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Probability <span class="required">*</span></label>
+                                        <input type="number" class="form-control" placeholder="Entre Probability">
                                     </div>
 
-                                    <!-- Shipping Address -->
+                                    <!-- date & source -->
                                     <div class="col-md-6">
-                                        <label class="form-label">Shipping Address <span
-                                                class="required">*</span></label>
-                                        <input type="text" class="form-control mb-3"
-                                            placeholder="Entre Shipping Address">
-                                        <div class="row g-2">
-                                            <div class="col-6"><input type="text" class="form-control"
-                                                    placeholder="Shipping City"></div>
-                                            <div class="col-6"><input type="text" class="form-control"
-                                                    placeholder="Shipping Country"></div>
-                                            <div class="col-6"><input type="text" class="form-control"
-                                                    placeholder="Shipping State"></div>
-                                            <div class="col-6"><input type="text" class="form-control"
-                                                    placeholder="Shipping Postal Code"></div>
-                                        </div>
+                                        <label class="form-label">Close Date <span class="required">*</span></label>
+                                        <input type="date" class="form-control" placeholder="mm\dd/yyyy">
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">Lead Source <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Lead Source</option>
+                                        </select>
+                                    </div>
+
 
                                     <!-- Assign User & Type -->
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 w-100">
                                         <label class="form-label">Assign User <span class="required">*</span></label>
                                         <select class="form-select">
                                             <option selected disabled>Select Assign User</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Type <span class="required">*</span></label>
-                                        <select class="form-select">
-                                            <option selected disabled>Select Type</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Industry & Document -->
-                                    <div class="col-md-6">
-                                        <label class="form-label">Industry <span class="required">*</span></label>
-                                        <select class="form-select">
-                                            <option selected disabled>Select Billing Contact</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Document <span class="required">*</span></label>
-                                        <select class="form-select">
-                                            <option selected disabled>Select Document</option>
                                         </select>
                                     </div>
 
@@ -312,7 +285,7 @@
 
     <!-- SCRIPTS -->
     <script src="../../Scripting/bootstrap.bundle.min.js"></script>
-    <script src="../../Scripting/main.js"></script>
+    <script src="../../Scripting/sales.js"></script>
 </body>
 
 </html>
