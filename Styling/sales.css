@@ -1,16 +1,22 @@
-/* ================= ROOT VARIABLES ================= */
+/* ======================================================
+   1. ROOT VARIABLES
+====================================================== */
 :root {
-    --erp-primary: #025B50;
-    --erp-primary-dark: #03332C;
-    --erp-primary-light: #007F6D;
-    --erp-accent: #00C4A7;
-    --erp-bg: #f6f8f9;
-    --modal-danger: #dc3545;       
-    --modal-border: #dee2e6;       
-    --modal-cancel: #6c757d;    
+  --erp-primary: #025B50;
+  --erp-primary-dark: #03332C;
+  --erp-primary-light: #007F6D;
+  --erp-accent: #00C4A7;
+  --erp-bg: #f6f8f9;
+
+  --modal-danger: #dc3545;
+  --modal-border: #dee2e6;
+  --modal-cancel: #6c757d;
 }
 
-/* ================= GLOBAL RESET ================= */
+
+/* ======================================================
+   2. RESET & GLOBAL
+====================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -22,14 +28,20 @@ body {
   background: #f5f5f5;
 }
 
-/* ================= HEADER ================= */
+
+/* ======================================================
+   3. HEADER
+====================================================== */
 .erp-header {
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-/* ================= NAVBAR ================= */
+
+/* ======================================================
+   4. NAVBAR
+====================================================== */
 .erp-navbar {
   height: 64px;
   background: var(--erp-primary);
@@ -38,25 +50,19 @@ body {
   justify-content: space-between;
   padding: 0 24px;
   color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* subtle shadow */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .nav-left,
 .nav-right {
-  height: 100%; /* smoother spacing */
+  height: 100%;
 }
 
-/* ----------------- NAV LEFT ----------------- */
+/* ---- Nav Left ---- */
 .nav-left {
   display: flex;
   align-items: center;
   gap: 16px;
-}
-
-.logo {
-  font-size: 26px;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .logo img {
@@ -67,7 +73,7 @@ body {
   transform: scale(1.05);
 }
 
-/* ----------------- SEARCH BOX ----------------- */
+/* ---- Search Box ---- */
 .search-box {
   background: #fff;
   border-radius: 20px;
@@ -96,11 +102,11 @@ body {
 }
 
 .search-box:focus-within {
-  box-shadow: 0 0 0 2px rgba(0, 196, 167, 0.25);
+  box-shadow: 0 0 0 2px rgba(0,196,167,0.25);
   transform: translateY(-1px);
 }
 
-/* ----------------- NAV RIGHT ----------------- */
+/* ---- Nav Right ---- */
 .nav-right {
   display: flex;
   align-items: center;
@@ -131,7 +137,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* ----------------- USER INFO ----------------- */
+/* ---- User Info ---- */
 .user-info {
   display: flex;
   align-items: center;
@@ -143,7 +149,7 @@ body {
 }
 
 .user-info:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,0.12);
 }
 
 .user-info img {
@@ -151,11 +157,6 @@ body {
   height: 38px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-.user-info .name,
-.user-info .email {
-  line-height: 1.2;
 }
 
 .user-info .name {
@@ -170,40 +171,27 @@ body {
   opacity: 0.85;
 }
 
-/* ================= RESPONSIVE NAVBAR ================= */
-@media (max-width: 992px) {
-  .search-box {
-    width: 200px;
-  }
-}
 
-@media (max-width: 768px) {
-  .search-box {
-    display: none;
-  }
-
-  .user-info .email {
-    display: none;
-  }
-}
-
-/* ================= LAYOUT ================= */
+/* ======================================================
+   5. LAYOUT
+====================================================== */
 .erp-layout {
   display: flex;
-  min-height: calc(100vh - 64px); /* height of navbar */
+  min-height: calc(100vh - 64px);
 }
 
-/* ================= SIDEBAR ================= */
+
+/* ======================================================
+   6. SIDEBAR
+====================================================== */
 .erp-sidebar {
   width: 104px;
   background: var(--erp-primary-dark);
-  color: var(--white);
   padding: 20px 0;
   position: sticky;
   top: 64px;
 }
 
-/* Sidebar Menu */
 .sidebar-menu {
   list-style: none;
   padding: 0;
@@ -217,7 +205,6 @@ body {
   padding: 14px 24px;
   cursor: pointer;
   transition: background 0.3s ease, padding-left 0.3s ease;
-  font-size: 14px;
 }
 
 .sidebar-menu li i {
@@ -225,29 +212,33 @@ body {
   color: var(--erp-accent);
 }
 
-/* Hover & Active */
 .sidebar-menu li:hover {
-  color: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
   padding-left: 30px;
 }
 
 .sidebar-menu li.active {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,0.12);
   border-left: 4px solid var(--erp-accent);
 }
 
-/* ================= MAIN CONTENT ================= */
+
+/* ======================================================
+   7. MAIN CONTENT
+====================================================== */
 .erp-content {
   flex: 1;
   padding: 30px 40px;
   background: var(--erp-bg);
 }
 
-/* ================= TOPBAR ================= */
+
+/* ======================================================
+   8. TOPBAR
+====================================================== */
 .erp-topbar {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   margin-bottom: 25px;
 }
 
@@ -264,11 +255,14 @@ body {
 
 .company-logo,
 .translate-icon {
-  cursor: pointer;
   height: 50px;
+  cursor: pointer;
 }
 
-/* ================= PAGE HEADER ================= */
+
+/* ======================================================
+   9. PAGE HEADER
+====================================================== */
 .erp-page-header {
   display: flex;
   justify-content: space-between;
@@ -284,21 +278,24 @@ body {
   font-weight: 600;
 }
 
-/* Create Button */
 .btn-create {
   background: var(--erp-primary);
-  color: var(--erp-bg);
+  color: white;
+  border: none;
   padding: 12px 26px;
   border-radius: 10px;
   font-weight: 600;
-  border: none;
+  transition: background 0.3s ease;
 }
 
 .btn-create:hover {
   background: var(--erp-primary-light);
 }
 
-/* ================= TOOLS ================= */
+
+/* ======================================================
+   10. TOOLS
+====================================================== */
 .erp-tools {
   display: flex;
   align-items: center;
@@ -314,11 +311,7 @@ body {
   border-radius: 10px;
   padding: 10px 16px;
   width: 280px;
-  background: var(--white);
-}
-
-.search-wrapper i {
-  color: var(--erp-primary);
+  background: white;
 }
 
 .search-wrapper input {
@@ -328,109 +321,87 @@ body {
 }
 
 .filter-btn {
-  background: var(--erp-primary);
-  color: white;
-  border: none;
   width: 46px;
   height: 46px;
   border-radius: 8px;
+  background: var(--erp-primary);
+  color: white;
+  border: none;
 }
 
-/* ================= TABLE ================= */
+
+/* ======================================================
+   11. TABLE
+====================================================== */
 .table-container {
   background: white;
   border-radius: 15px;
   border: 1px solid #dee2e6;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.table {
-  margin-bottom: 0;
 }
 
 .table thead th {
-  background-color: #f8f9fa;
+  background: #f8f9fa;
   color: #005f54;
   font-weight: 600;
   padding: 20px;
-  border-bottom: 2px solid #dee2e6;
   text-align: center;
 }
 
 .table tbody td {
   padding: 20px;
-  vertical-align: middle;
+  text-align: center;
   color: #6c757d;
   border-bottom: 1px solid #f1f1f1;
-  text-align: center;
 }
 
-.table td:first-child, .table th:first-child { text-align: left; padding-left: 30px; }
-.table td:last-child, .table th:last-child { text-align: center; padding-right: 30px; }
-
-.external-link-icon {
-  color: #005f54;
-  font-size: 1.1rem;
-  margin-left: 8px;
-  cursor: pointer;
+.table td:first-child,
+.table th:first-child {
+  text-align: left;
+  padding-left: 30px;
 }
 
+.table td:last-child,
+.table th:last-child {
+  padding-right: 30px;
+}
+
+
+/* ======================================================
+   12. ACTION ICONS
+====================================================== */
 .action-icons {
   display: flex;
-  gap: 15px;
   justify-content: center;
+  gap: 15px;
 }
 
 .action-icons i {
   font-size: 1.2rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.icon-delete { color: #dc3545; } /* Red */
-.icon-edit { color: #ffc107; }   /* Yellow/Orange */
-.icon-view { color: #0d6efd; }   /* Blue */
-
-/* ================= TABLE ACTION BUTTONS ANIMATION ================= */
-.action-icons i {
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease; /* smooth transition for hover */
-    transform: translateY(0);   /* initial position */
-}
-
-/* Hover effect */
 .action-icons i:hover {
-    transform: translateY(-3px); /* slight lift */
-    filter: brightness(1.2);     /* make icon brighter */
+  transform: translateY(-3px);
+  filter: brightness(1.2);
 }
 
-/* Specific colors */
-.icon-delete:hover {
-    color: #dc3545; /* red stays red, brightness makes it pop */
-}
-
-.icon-edit:hover {
-    color: #ffc107; /* yellow/orange pop */
-}
-
-.icon-view:hover {
-    color: #0d6efd; /* blue pop */
-}
+.icon-delete { color: #dc3545; }
+.icon-edit   { color: #ffc107; }
+.icon-view   { color: #0d6efd; }
 
 
-
-/* ================= PAGINATION ================= */
+/* ======================================================
+   13. PAGINATION
+====================================================== */
 .pagination-info {
   color: #6c757d;
   font-size: 0.9rem;
-  margin-top: 20px;
 }
 
 .custom-pagination {
   display: flex;
-  align-items: center;
-  gap: 0;
   border: 1px solid #dee2e6;
   border-radius: 8px;
   overflow: hidden;
@@ -439,175 +410,71 @@ body {
 
 .pagination-btn {
   padding: 10px 20px;
-  border: none;
   background: white;
   color: #005f54;
-  font-weight: 500;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
 }
 
 .pagination-btn:hover {
-  background-color: #f8f9fa;
-  color: #005f54;
+  background: #f8f9fa;
+  transform: translateY(-3px);
 }
 
 .pagination-btn.active {
-  background-color: #005f54;
+  background: #005f54;
   color: white;
 }
 
-.pagination-btn.disabled {
-  color: #adb5bd;
-  pointer-events: none;
+
+/* ======================================================
+   14. MODAL
+====================================================== */
+.modal-content {
+  border-radius: 12px;
+  border: none;
+  padding: 10px;
 }
 
-.pagination-divider {
-  width: 1px;
-  background-color: #dee2e6;
-  height: 40px;
+.modal-header {
+  padding: 20px 30px;
 }
 
-/* ================= PAGINATION ANIMATION ================= */
-.pagination-btn {
-    padding: 10px 20px;
-    border: none;
-    background: white;
-    color: #005f54;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease; /* smooth transition for hover & active */
-    transform: translateY(0);   /* initial position */
+.modal-title {
+  color: var(--erp-primary);
+  font-weight: 700;
 }
 
-/* Hover effect */
-.pagination-btn:hover {
-    background-color: #f8f9fa;
-    color: #005f54;
-    transform: translateY(-3px); /* moves button slightly up */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* subtle shadow */
+.btn-close-custom {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
 }
 
-/* Active page */
-.pagination-btn.active {
-    background-color: #005f54;
-    color: white;
-    transform: translateY(-2px); /* slight lift for active */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* stronger shadow */
+.modal-body {
+  padding: 30px;
 }
 
-/* Disabled */
-.pagination-btn.disabled {
-    color: #adb5bd;
-    pointer-events: none;
-    transform: translateY(0);
-    box-shadow: none;
+.form-control {
+  border-radius: 8px;
+  padding: 10px 15px;
 }
 
-
-
-/* ================= RESPONSIVE SIDEBAR ================= */
-@media (max-width: 992px) {
-  .erp-sidebar {
-    width: 70px;
-  }
-
-  .sidebar-menu li span {
-    display: none;
-  }
-
-  .sidebar-menu li {
-    justify-content: center;
-  }
+.phone-hint {
+  font-size: 0.75rem;
+  color: var(--modal-danger);
 }
 
+.modal-footer {
+  padding: 0 30px 30px;
+  display: flex;
+  gap: 15px;
+}
 
-/* ================= Opening Modal ================= */
-        .modal-content {
-            border-radius: 12px;
-            border: none;
-            padding: 10px;
-        }
-
-        .modal-header {
-            border-bottom: 1px solid #eee;
-            padding: 20px 30px;
-        }
-
-        .modal-title {
-            color: var(--erp-primary);
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-
-        .btn-close-custom {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--erp-primary);
-            font-weight: bold;
-        }
-
-        .modal-body {
-            padding: 30px;
-        }
-
-        .form-label {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-        }
-
-        .form-label .required {
-            color: var(--modal-danger);
-        }
-
-        .form-control, .form-select {
-            border-radius: 8px;
-            border: 1px solid var(--modal-border);
-            padding: 10px 15px;
-            font-size: 0.9rem;
-            color: #444;
-        }
-
-        .form-control::placeholder {
-            color: #adb5bd;
-        }
-
-        .phone-hint {
-            color: var(--modal-danger);
-            font-size: 0.75rem;
-            margin-top: 4px;
-        }
-
-        .modal-footer {
-            border-top: none;
-            padding: 0 30px 30px;
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-        }
-
-        .btn-cancel {
-            background-color: var(--modal-cancel);
-            color: white;
-            border: none;
-            padding: 10px 35px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .btn-create {
-            background-color: var(--erp-primary);
-            color: white;
-            border: none;
-            padding: 10px 45px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .btn-create:hover {
-            background-color: var(--erp-primary-dark);
-            color: white;
-        }
+.btn-cancel {
+  background: var(--modal-cancel);
+  color: white;
+  padding: 10px 35px;
+  border-radius: 8px;
+  border: none;
+}
