@@ -5,6 +5,9 @@
     --erp-primary-light: #007F6D;
     --erp-accent: #00C4A7;
     --erp-bg: #f6f8f9;
+    --modal-danger: #dc3545;       
+    --modal-border: #dee2e6;       
+    --modal-cancel: #6c757d;    
 }
 
 /* ================= GLOBAL RESET ================= */
@@ -517,3 +520,94 @@ body {
     justify-content: center;
   }
 }
+
+
+/* ================= Opening Modal ================= */
+        .modal-content {
+            border-radius: 12px;
+            border: none;
+            padding: 10px;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #eee;
+            padding: 20px 30px;
+        }
+
+        .modal-title {
+            color: var(--erp-primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .btn-close-custom {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--erp-primary);
+            font-weight: bold;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-label .required {
+            color: var(--modal-danger);
+        }
+
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid var(--modal-border);
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .form-control::placeholder {
+            color: #adb5bd;
+        }
+
+        .phone-hint {
+            color: var(--modal-danger);
+            font-size: 0.75rem;
+            margin-top: 4px;
+        }
+
+        .modal-footer {
+            border-top: none;
+            padding: 0 30px 30px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+
+        .btn-cancel {
+            background-color: var(--modal-cancel);
+            color: white;
+            border: none;
+            padding: 10px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-create {
+            background-color: var(--erp-primary);
+            color: white;
+            border: none;
+            padding: 10px 45px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-create:hover {
+            background-color: var(--erp-primary-dark);
+            color: white;
+        }

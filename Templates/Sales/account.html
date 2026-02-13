@@ -89,7 +89,9 @@
                     <i class="fa-solid fa-arrow-left"></i>
                     Account
                 </h2>
-                <button class="btn btn-create">Create Account</button>
+                <button class="btn btn-create" data-bs-toggle="modal" data-bs-target="#createAccountModal">
+                    Create Account
+                </button>
             </div>
 
             <!-- TOOLS -->
@@ -159,7 +161,7 @@
                                 </div>
                             </td>
                         </tr>
-                       <tr>
+                        <tr>
                             <td>XYZ Enterprises</td>
                             <td>contact@xyzenterprises.com</td>
                             <td>+91989865653</td>
@@ -173,7 +175,7 @@
                                 </div>
                             </td>
                         </tr>
-                    
+
                     </tbody>
                 </table>
             </div>
@@ -190,6 +192,120 @@
                 </div>
             </div>
 
+            <!-- Create Sales Account Modal -->
+            <div class="modal fade" id="createAccountModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Create Sales Account</h5>
+                            <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="createAccountForm">
+                                <div class="row g-4">
+                                    <!-- Name & Email -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Name <span class="required">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Entre Name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Email <span class="required">*</span></label>
+                                        <input type="email" class="form-control" placeholder="Entre Email">
+                                    </div>
+
+                                    <!-- Phone & Website -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Phone <span class="required">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Entre Phone">
+                                        <div class="phone-hint">Please use with country code. (ex. +91)</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Website <span class="required">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Entre Website">
+                                    </div>
+
+                                    <!-- Billing Address -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Billing Address <span
+                                                class="required">*</span></label>
+                                        <input type="text" class="form-control mb-3"
+                                            placeholder="Entre Billing Address">
+                                        <div class="row g-2">
+                                            <div class="col-6"><input type="text" class="form-control"
+                                                    placeholder="Billing City"></div>
+                                            <div class="col-6"><input type="text" class="form-control"
+                                                    placeholder="Billing Country"></div>
+                                            <div class="col-6"><input type="text" class="form-control"
+                                                    placeholder="Billing State"></div>
+                                            <div class="col-6"><input type="text" class="form-control"
+                                                    placeholder="Billing Postal Code"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Shipping Address -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Shipping Address <span
+                                                class="required">*</span></label>
+                                        <input type="text" class="form-control mb-3"
+                                            placeholder="Entre Shipping Address">
+                                        <div class="row g-2">
+                                            <div class="col-6"><input type="text" class="form-control"
+                                                    placeholder="Shipping City"></div>
+                                            <div class="col-6"><input type="text" class="form-control"
+                                                    placeholder="Shipping Country"></div>
+                                            <div class="col-6"><input type="text" class="form-control"
+                                                    placeholder="Shipping State"></div>
+                                            <div class="col-6"><input type="text" class="form-control"
+                                                    placeholder="Shipping Postal Code"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Assign User & Type -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Assign User <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Assign User</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Type <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Type</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Industry & Document -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Industry <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Billing Contact</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Document <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Document</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Description -->
+                                    <div class="col-12">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control" rows="4"
+                                            placeholder="Entre Description"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn-create">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
     </div>
