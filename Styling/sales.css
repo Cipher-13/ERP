@@ -1,3 +1,4 @@
+/* ================= ROOT VARIABLES ================= */
 :root {
     --erp-primary: #025B50;
     --erp-primary-dark: #03332C;
@@ -6,6 +7,7 @@
     --erp-bg: #f6f8f9;
 }
 
+/* ================= GLOBAL RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -17,14 +19,14 @@ body {
   background: #f5f5f5;
 }
 
+/* ================= HEADER ================= */
 .erp-header {
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-
-/**********Nav-Bar************/
+/* ================= NAVBAR ================= */
 .erp-navbar {
   height: 64px;
   background: var(--erp-primary);
@@ -33,9 +35,15 @@ body {
   justify-content: space-between;
   padding: 0 24px;
   color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* subtle shadow */
 }
 
-/* LEFT */
+.nav-left,
+.nav-right {
+  height: 100%; /* smoother spacing */
+}
+
+/* ----------------- NAV LEFT ----------------- */
 .nav-left {
   display: flex;
   align-items: center;
@@ -48,7 +56,15 @@ body {
   cursor: pointer;
 }
 
-/* SEARCH */
+.logo img {
+  transition: transform 0.25s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------- SEARCH BOX ----------------- */
 .search-box {
   background: #fff;
   border-radius: 20px;
@@ -57,6 +73,7 @@ body {
   align-items: center;
   gap: 8px;
   width: 260px;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .search-box i {
@@ -71,7 +88,16 @@ body {
   font-size: 14px;
 }
 
-/* RIGHT */
+.search-box input::placeholder {
+  color: #999;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 0 0 2px rgba(0, 196, 167, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ----------------- NAV RIGHT ----------------- */
 .nav-right {
   display: flex;
   align-items: center;
@@ -94,13 +120,27 @@ body {
   justify-content: center;
   font-size: 14px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* USER */
+.nav-icons i:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* ----------------- USER INFO ----------------- */
 .user-info {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user-info:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .user-info img {
@@ -108,6 +148,11 @@ body {
   height: 38px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.user-info .name,
+.user-info .email {
+  line-height: 1.2;
 }
 
 .user-info .name {
@@ -122,73 +167,7 @@ body {
   opacity: 0.85;
 }
 
-
-/* subtle shadow */
-.erp-navbar {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* smoother spacing */
-.nav-left,
-.nav-right {
-  height: 100%;
-}
-
-/* ================= SEARCH BOX ================= */
-.search-box {
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
-}
-
-.search-box:focus-within {
-  box-shadow: 0 0 0 2px rgba(0, 196, 167, 0.25);
-  transform: translateY(-1px);
-}
-
-.search-box input::placeholder {
-  color: #999;
-}
-
-/* ================= ICONS ================= */
-.nav-icons i {
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.nav-icons i:hover {
-  background: #f0f0f0;
-  transform: translateY(-2px);
-}
-
-/* ================= USER INFO ================= */
-.user-info {
-  padding: 4px 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.user-info:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-/* improve text readability */
-.user-info .name {
-  line-height: 1.2;
-}
-
-.user-info .email {
-  line-height: 1.2;
-}
-
-/* ================= LOGO ================= */
-.logo img {
-  transition: transform 0.25s ease;
-}
-
-.logo img:hover {
-  transform: scale(1.05);
-}
-
-/* ================= RESPONSIVE TOUCH ================= */
+/* ================= RESPONSIVE NAVBAR ================= */
 @media (max-width: 992px) {
   .search-box {
     width: 200px;
@@ -204,9 +183,8 @@ body {
     display: none;
   }
 }
-/**********Nav-Bar************/
 
-/**********Side-Bar************/
+/* ================= LAYOUT ================= */
 .erp-layout {
   display: flex;
   min-height: calc(100vh - 64px); /* height of navbar */
@@ -222,7 +200,7 @@ body {
   top: 64px;
 }
 
-/* MENU */
+/* Sidebar Menu */
 .sidebar-menu {
   list-style: none;
   padding: 0;
@@ -244,26 +222,288 @@ body {
   color: var(--erp-accent);
 }
 
-/* Hover */
+/* Hover & Active */
 .sidebar-menu li:hover {
   color: rgba(255, 255, 255, 0.08);
   padding-left: 30px;
 }
 
-/* Active */
 .sidebar-menu li.active {
   background: rgba(255, 255, 255, 0.12);
   border-left: 4px solid var(--erp-accent);
 }
 
-/* ================= CONTENT ================= */
+/* ================= MAIN CONTENT ================= */
 .erp-content {
   flex: 1;
-  padding: 30px;
+  padding: 30px 40px;
   background: var(--erp-bg);
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TOPBAR ================= */
+.erp-topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.company-name {
+  font-weight: 600;
+  color: #000;
+}
+
+.company-logo,
+.translate-icon {
+  cursor: pointer;
+  height: 50px;
+}
+
+/* ================= PAGE HEADER ================= */
+.erp-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--erp-primary-dark);
+  font-weight: 600;
+}
+
+/* Create Button */
+.btn-create {
+  background: var(--erp-primary);
+  color: var(--erp-bg);
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-create:hover {
+  background: var(--erp-primary-light);
+}
+
+/* ================= TOOLS ================= */
+.erp-tools {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--erp-primary);
+  border-radius: 10px;
+  padding: 10px 16px;
+  width: 280px;
+  background: var(--white);
+}
+
+.search-wrapper i {
+  color: var(--erp-primary);
+}
+
+.search-wrapper input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.filter-btn {
+  background: var(--erp-primary);
+  color: white;
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+}
+
+/* ================= TABLE ================= */
+.table-container {
+  background: white;
+  border-radius: 15px;
+  border: 1px solid #dee2e6;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  background-color: #f8f9fa;
+  color: #005f54;
+  font-weight: 600;
+  padding: 20px;
+  border-bottom: 2px solid #dee2e6;
+  text-align: center;
+}
+
+.table tbody td {
+  padding: 20px;
+  vertical-align: middle;
+  color: #6c757d;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: center;
+}
+
+.table td:first-child, .table th:first-child { text-align: left; padding-left: 30px; }
+.table td:last-child, .table th:last-child { text-align: center; padding-right: 30px; }
+
+.external-link-icon {
+  color: #005f54;
+  font-size: 1.1rem;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.action-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.action-icons i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.icon-delete { color: #dc3545; } /* Red */
+.icon-edit { color: #ffc107; }   /* Yellow/Orange */
+.icon-view { color: #0d6efd; }   /* Blue */
+
+/* ================= TABLE ACTION BUTTONS ANIMATION ================= */
+.action-icons i {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease; /* smooth transition for hover */
+    transform: translateY(0);   /* initial position */
+}
+
+/* Hover effect */
+.action-icons i:hover {
+    transform: translateY(-3px); /* slight lift */
+    filter: brightness(1.2);     /* make icon brighter */
+}
+
+/* Specific colors */
+.icon-delete:hover {
+    color: #dc3545; /* red stays red, brightness makes it pop */
+}
+
+.icon-edit:hover {
+    color: #ffc107; /* yellow/orange pop */
+}
+
+.icon-view:hover {
+    color: #0d6efd; /* blue pop */
+}
+
+
+
+/* ================= PAGINATION ================= */
+.pagination-info {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+.custom-pagination {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.pagination-btn {
+  padding: 10px 20px;
+  border: none;
+  background: white;
+  color: #005f54;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.pagination-btn:hover {
+  background-color: #f8f9fa;
+  color: #005f54;
+}
+
+.pagination-btn.active {
+  background-color: #005f54;
+  color: white;
+}
+
+.pagination-btn.disabled {
+  color: #adb5bd;
+  pointer-events: none;
+}
+
+.pagination-divider {
+  width: 1px;
+  background-color: #dee2e6;
+  height: 40px;
+}
+
+/* ================= PAGINATION ANIMATION ================= */
+.pagination-btn {
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    color: #005f54;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease; /* smooth transition for hover & active */
+    transform: translateY(0);   /* initial position */
+}
+
+/* Hover effect */
+.pagination-btn:hover {
+    background-color: #f8f9fa;
+    color: #005f54;
+    transform: translateY(-3px); /* moves button slightly up */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+/* Active page */
+.pagination-btn.active {
+    background-color: #005f54;
+    color: white;
+    transform: translateY(-2px); /* slight lift for active */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* stronger shadow */
+}
+
+/* Disabled */
+.pagination-btn.disabled {
+    color: #adb5bd;
+    pointer-events: none;
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+
+
+/* ================= RESPONSIVE SIDEBAR ================= */
 @media (max-width: 992px) {
   .erp-sidebar {
     width: 70px;
@@ -277,5 +517,3 @@ body {
     justify-content: center;
   }
 }
-
-/**********Side-Bar************/
