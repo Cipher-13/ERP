@@ -1,5 +1,6 @@
 :root {
-    --erp-primary: #025B50;a
+    --erp-primary: #025B50;
+    --erp-primary-dark: #03332C;
     --erp-primary-light: #007F6D;
     --erp-accent: #00C4A7;
     --erp-bg: #f6f8f9;
@@ -18,26 +19,20 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+    background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
                       url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZWVlIiBzdHJva2Utd2lkdGg9IjAuNSI+PHBhdGggZD0iTTAgMGwxMDAgMTAwTTAgMTAwaDEwMFYwSDB6Ii8+PC9nPjwvc3ZnPg==');
     background-size: 200px 200px;
-}
-
-/* Logo Styling */
-.logo-text {
-    font-weight: 700;
-    font-size: 2.5rem;
-    color: var(--erp-primary-dark);
-    letter-spacing: 2px;
 }
 
 /* Pricing Card Base */
 .pricing-card {
     border: none;
     border-radius: 12px;
-    transition: transform 0.3s ease;
     position: relative;
     height: 100%;
+    transition: transform 0.3s ease;
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
 }
 
 /* Side Cards (Dark) */
@@ -45,6 +40,7 @@ body {
     background-color: var(--erp-primary-dark);
     color: var(--white);
     z-index: 1;
+    backdrop-filter: blur(4px);
 }
 
 .left-card {
@@ -63,7 +59,9 @@ body {
     color: #333;
     z-index: 2;
     transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.1),
+        0 10px 20px rgba(0,0,0,0.05) !important;
 }
 
 /* Badge Styling */
@@ -104,6 +102,7 @@ body {
 .amount {
     font-size: 4rem;
     font-weight: 800;
+    transition: 0.3s ease;
 }
 
 .period {
@@ -115,7 +114,6 @@ body {
 .divider {
     border-top: 1px solid rgba(255,255,255,0.2);
     margin: 2rem 0;
-    opacity: 1;
 }
 
 .divider.dark {
@@ -145,6 +143,14 @@ body {
     font-size: 0.9rem;
     display: flex;
     align-items: center;
+    transition: 0.3s ease;
+    border-radius: 6px;
+    padding-left: 4px;
+}
+
+.features-list li:hover {
+    background-color: rgba(0,0,0,0.05);
+    padding-left: 10px;
 }
 
 .features-list i {
@@ -158,6 +164,23 @@ body {
     font-weight: 600;
     border-radius: 8px;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.15);
+    transition: 0.4s ease;
+}
+
+.btn:hover::after {
+    width: 100%;
 }
 
 .btn-outline-light {
@@ -181,29 +204,7 @@ body {
     border-color: var(--erp-primary);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 991.98px) {
-    .pricing-row {
-        gap: 2rem;
-    }
-    .center-card {
-        transform: scale(1);
-    }
-    .side-card {
-        border-radius: 12px;
-    }
-    .pricing-card {
-        margin-bottom: 20px;
-    }
-}
-/* ================= ENHANCED INTERACTIONS ================= */
-
-/* Smooth entrance animation */
-.pricing-card {
-    animation: fadeUp 0.6s ease forwards;
-    opacity: 0;
-}
-
+/* Animations Delay */
 .pricing-card:nth-child(1) { animation-delay: 0.1s; }
 .pricing-card:nth-child(2) { animation-delay: 0.2s; }
 .pricing-card:nth-child(3) { animation-delay: 0.3s; }
@@ -219,7 +220,7 @@ body {
     }
 }
 
-/* Hover elevation effect */
+/* Hover Effects */
 .pricing-card:hover {
     transform: translateY(-8px);
 }
@@ -228,40 +229,34 @@ body {
     transform: scale(1.07) translateY(-8px);
 }
 
-/* Glass subtle effect */
-.side-card {
-    backdrop-filter: blur(4px);
-}
-
-/* Better shadow depth */
-.center-card {
-    box-shadow: 
-        0 20px 40px rgba(0,0,0,0.1),
-        0 10px 20px rgba(0,0,0,0.05) !important;
-}
-
-/* Price animation on hover */
 .pricing-card:hover .amount {
     color: var(--erp-accent);
-    transition: 0.3s ease;
 }
 
-/* Button micro interaction */
-.btn {
-    position: relative;
-    overflow: hidden;
-}
+/* Responsive */
+@media (max-width: 991.98px) {
+    .pricing-row {
+        gap: 2rem;
+    }
 
-.btn::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(255,255,255,0.15);
-    transition: 0.4s ease;
-}
+    .center-card {
+        transform: scale(1);
+    }
 
-.btn:hover::after {
-    width: 100%;
+    .side-card {
+        border-radius: 12px;
+    }
+
+    .pricing-card {
+        margin-bottom: 20px;
+    }
+
+    .pricing-card:hover {
+        transform: none;
+    }
+
+    .pricing-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
