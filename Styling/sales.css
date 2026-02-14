@@ -7,6 +7,7 @@
   --erp-primary-light: #007F6D;
   --erp-accent: #00C4A7;
   --erp-bg: #f6f8f9;
+  --erp-canceled:  #C10F12;
 
   --modal-danger: #dc3545;
   --modal-border: #dee2e6;
@@ -342,7 +343,7 @@ body {
 
 .table thead th {
   background: #f8f9fa;
-  color: #005f54;
+  color: var(--erp-primary-light);
   font-weight: 600;
   padding: 20px;
   text-align: center;
@@ -411,7 +412,7 @@ body {
 .pagination-btn {
   padding: 10px 20px;
   background: white;
-  color: #005f54;
+  color: var(--erp-primary-light);
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -422,7 +423,7 @@ body {
 }
 
 .pagination-btn.active {
-  background: #005f54;
+  background: var(--erp-primary);
   color: white;
 }
 
@@ -438,7 +439,35 @@ body {
 
 .modal-header {
   padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.bi-x-lg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  color: var(--erp-canceled);
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.25s ease;
+}
+
+.bi-x-lg:hover {
+  background-color: var(--modal-danger);
+  color: var(--erp-bg);
+    transform: scale(1.15) rotate(90deg);
+}
+
 
 .modal-title {
   color: var(--erp-primary);
@@ -460,6 +489,11 @@ body {
   padding: 10px 15px;
 }
 
+.form-label{
+  font-weight: bolder;
+  color:var(--erp-primary-dark)
+}
+
 .phone-hint {
   font-size: 0.75rem;
   color: var(--modal-danger);
@@ -473,11 +507,35 @@ body {
 
 .btn-cancel {
   background: var(--modal-cancel);
-  color: white;
+  color: var(--erp-bg);
   padding: 10px 35px;
   border-radius: 8px;
   border: none;
 }
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 10px;
+  border-radius: 16px;
+
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--erp-bg);
+
+  min-width: 130px;
+}
+
+.status-submitted {
+  background-color: var(--erp-primary);
+}
+
+.status-canceled {
+  background-color: var(--erp-canceled);
+}
+
 
 /* ======================================================
    RESPONSIVE BREAKPOINTS

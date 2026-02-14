@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sales Account</title>
+    <title>Sales Quote</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -87,10 +87,10 @@
             <div class="erp-page-header">
                 <h2 class="page-title">
                     <i class="fa-solid fa-arrow-left"></i>
-                    Account
+                    Quote
                 </h2>
-                <button class="btn btn-create" data-bs-toggle="modal" data-bs-target="#createAccountModal">
-                    Create Account
+                <button class="btn btn-create" data-bs-toggle="modal" data-bs-target="#createRequestModal">
+                    Create Request
                 </button>
             </div>
 
@@ -110,20 +110,28 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Website</th>
+                            <th>Account</th>
+                            <th>Status</th>
+                            <th>Date Quoted</th>
+                            <th>Amount</th>
                             <th>Assign user</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>XYZ Enterprises</td>
-                            <td>contact@xyzenterprises.com</td>
-                            <td>+91989865653</td>
-                            <td>www.xyzenterprises.com <i class="bi bi-box-arrow-up-right external-link-icon"></i></td>
+                            <td>0957746KJLY</td>
+                            <td>SaaS Subscription - Enterprise Tier</td>
+                            <td>ABC Technologies</td>
+                            <td>
+                                <div class="status-badge status-submitted">
+                                    Submitted
+                                </div>
+                            </td>
+                            <td>24.12.2020</td>
+                            <td>$706,635.0</td>
                             <td>John Smith</td>
                             <td>
                                 <div class="action-icons">
@@ -134,10 +142,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>XYZ Enterprises</td>
-                            <td>contact@xyzenterprises.com</td>
-                            <td>+91989865653</td>
-                            <td>www.xyzenterprises.com <i class="bi bi-box-arrow-up-right external-link-icon"></i></td>
+                            <td>0957746KJLY</td>
+                            <td>SaaS Subscription - Enterprise Tier</td>
+                            <td>ABC Technologies</td>
+                            <td>
+                                <div class="status-badge status-canceled">
+                                    Canceled
+                                </div>
+                            </td>
+                            <td>24.12.2020</td>
+                            <td>$706,635.0</td>
                             <td>John Smith</td>
                             <td>
                                 <div class="action-icons">
@@ -148,10 +162,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>XYZ Enterprises</td>
-                            <td>contact@xyzenterprises.com</td>
-                            <td>+91989865653</td>
-                            <td>www.xyzenterprises.com <i class="bi bi-box-arrow-up-right external-link-icon"></i></td>
+                            <td>0957746KJLY</td>
+                            <td>SaaS Subscription - Enterprise Tier</td>
+                            <td>ABC Technologies</td>
+                            <td>
+                                <div class="status-badge status-submitted">
+                                    Submitted
+                                </div>
+                            </td>
+                            <td>24.12.2020</td>
+                            <td>$706,635.0</td>
                             <td>John Smith</td>
                             <td>
                                 <div class="action-icons">
@@ -162,10 +182,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>XYZ Enterprises</td>
-                            <td>contact@xyzenterprises.com</td>
-                            <td>+91989865653</td>
-                            <td>www.xyzenterprises.com <i class="bi bi-box-arrow-up-right external-link-icon"></i></td>
+                            <td>0957746KJLY</td>
+                            <td>SaaS Subscription - Enterprise Tier</td>
+                            <td>ABC Technologies</td>
+                            <td>
+                                <div class="status-badge status-canceled">
+                                    Canceled
+                                </div>
+                            <td>24.12.2020</td>
+                            <td>$706,635.0</td>
                             <td>John Smith</td>
                             <td>
                                 <div class="action-icons">
@@ -193,11 +218,11 @@
             </div>
 
             <!-- Create Sales Account Modal -->
-            <div class="modal fade" id="createAccountModal" tabindex="-1" aria-hidden="true">
+            <div class="modal fade" id="createRequestModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Create Sales Account</h5>
+                            <h5 class="modal-title">Create Quote</h5>
                             <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
                                 <i class="bi bi-x-lg"></i>
                             </button>
@@ -205,25 +230,54 @@
                         <div class="modal-body">
                             <form id="createAccountForm">
                                 <div class="row g-4">
-                                    <!-- Name & Email -->
+                                    <!-- Name & Opportunity -->
                                     <div class="col-md-6">
                                         <label class="form-label">Name <span class="required">*</span></label>
                                         <input type="text" class="form-control" placeholder="Entre Name">
                                     </div>
+
                                     <div class="col-md-6">
-                                        <label class="form-label">Email <span class="required">*</span></label>
-                                        <input type="email" class="form-control" placeholder="Entre Email">
+                                        <label class="form-label">Opportunities <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Opportunities</option>
+                                        </select>
                                     </div>
 
-                                    <!-- Phone & Website -->
+                                    <!-- Status & Acc -->
+
                                     <div class="col-md-6">
-                                        <label class="form-label">Phone <span class="required">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Entre Phone">
-                                        <div class="phone-hint">Please use with country code. (ex. +91)</div>
+                                        <label class="form-label">Status <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Status</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">Account <span class="required">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Entre Account">
+                                    </div>
+
+                                    <!-- Amount & Probabilty -->
+                                    <div class="col-md-6">
+                                        <label class="form-label">Amount <span class="required">*</span></label>
+                                        <input type="number" class="form-control" placeholder="Entre Amount">
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="form-label">Website <span class="required">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Entre Website">
+                                        <label class="form-label">Probability <span class="required">*</span></label>
+                                        <input type="number" class="form-control" placeholder="Entre Probability">
+                                    </div>
+
+                                    <!-- date & no -->
+                                    <div class="col-md-6">
+                                        <label class="form-label"> Date Quoted <span class="required">*</span></label>
+                                        <input type="date" class="form-control" placeholder="mm\dd/yyyy">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">Quoted no. <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Leadig Source</option>
+                                        </select>
                                     </div>
 
                                     <!-- Billing Address -->
@@ -262,39 +316,52 @@
                                         </div>
                                     </div>
 
-                                    <!-- Assign User & Type -->
+                                    <!-- Contarcts -->
+
                                     <div class="col-md-6">
-                                        <label class="form-label">Assign User <span class="required">*</span></label>
+                                        <label class="form-label">Billing Contract <span
+                                                class="required">*</span></label>
                                         <select class="form-select">
-                                            <option selected disabled>Select Assign User</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Type <span class="required">*</span></label>
-                                        <select class="form-select">
-                                            <option selected disabled>Select Type</option>
+                                            <option selected disabled>Select Billing Contract</option>
                                         </select>
                                     </div>
 
-                                    <!-- Industry & Document -->
                                     <div class="col-md-6">
-                                        <label class="form-label">Industry <span class="required">*</span></label>
+                                        <label class="form-label">Shipping Contract <span
+                                                class="required">*</span></label>
                                         <select class="form-select">
-                                            <option selected disabled>Select Billing Contact</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Document <span class="required">*</span></label>
-                                        <select class="form-select">
-                                            <option selected disabled>Select Document</option>
+                                            <option selected disabled>Select Shipping Contract</option>
                                         </select>
                                     </div>
 
+                                    <!-- Contarcts -->
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">Shiping Provider <span
+                                                class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Shiping Provider</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label class="form-label">Assigned User <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Assigned User</option>
+                                        </select>
+                                    </div>
                                     <!-- Description -->
                                     <div class="col-12">
                                         <label class="form-label">Description</label>
                                         <textarea class="form-control" rows="4"
                                             placeholder="Entre Description"></textarea>
+                                    </div>
+
+                                    <!-- Notes -->
+                                    <div class="col-12">
+                                        <label class="form-label">Notes</label>
+                                        <textarea class="form-control" rows="4"
+                                            placeholder="Entre Notes"></textarea>
                                     </div>
                                 </div>
                             </form>
