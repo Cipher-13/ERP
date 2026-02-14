@@ -6,6 +6,7 @@ const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 
 /* ==========================
    2. PAGE LOAD STAGGER
+   (Extended for Report Page)
 ========================== */
 window.addEventListener("load", () => {
   const animated = [
@@ -14,7 +15,14 @@ window.addEventListener("load", () => {
     ".erp-topbar",
     ".erp-page-header",
     ".erp-tools",
-    ".table-container"
+    ".table-container",
+
+    /* NEW */
+    ".report-container",
+    ".header-section",
+    ".card-custom",
+    ".graph-header",
+    ".chart-container"
   ];
 
   animated.forEach((selector, i) => {
@@ -22,7 +30,7 @@ window.addEventListener("load", () => {
     if (!el) return;
 
     el.style.opacity = "0";
-    el.style.transform = "translateY(20px)";
+    el.style.transform = "translateY(25px)";
     el.style.transition = "all 0.6s ease";
 
     setTimeout(() => {
@@ -51,8 +59,11 @@ $$(".sidebar-menu li").forEach(item => {
 
 /* ==========================
    4. MAGNETIC BUTTONS
+   (Extended)
 ========================== */
-$$(".btn-create, .filter-btn").forEach(btn => {
+$$(
+  ".btn-create, .filter-btn, .btn-apply, .btn-reset, .action-btn"
+).forEach(btn => {
   btn.addEventListener("mousemove", e => {
     const rect = btn.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
@@ -67,7 +78,7 @@ $$(".btn-create, .filter-btn").forEach(btn => {
 });
 
 /* ==========================
-   5. TABLE ROW REVEAL
+   5. TABLE & CARD REVEAL
 ========================== */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -77,19 +88,30 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
+/* Tables (old pages) */
 $$(".table tbody tr").forEach((row, i) => {
   row.style.opacity = "0";
   row.style.transform = "translateY(15px)";
-  row.style.transition = `all 0.4s ease ${i * 0.04}s`;
+  row.style.transition = `all 0.4s ease ${i * 0.05}s`;
   observer.observe(row);
+});
+
+/* Cards (new report page) */
+$$(".card-custom").forEach((card, i) => {
+  card.style.opacity = "0";
+  card.style.transform = "translateY(20px)";
+  card.style.transition = `all 0.5s ease ${i * 0.1}s`;
+  observer.observe(card);
 });
 
 /* ==========================
    6. ACTION ICON FEEDBACK
 ========================== */
-$$(".action-icons i").forEach(icon => {
+$$(
+  ".action-icons i, .graph-actions button i"
+).forEach(icon => {
   icon.addEventListener("click", () => {
     icon.animate(
       [
@@ -108,6 +130,8 @@ $$(".action-icons i").forEach(icon => {
 $$(".modal").forEach(modal => {
   modal.addEventListener("show.bs.modal", () => {
     const content = $(".modal-content", modal);
+    if (!content) return;
+
     content.animate(
       [
         { transform: "scale(0.9)", opacity: 0 },
@@ -135,7 +159,7 @@ $$(".nav-icons i").forEach(icon => {
 });
 
 /* ==========================
-   9. SMOOTH SCROLL FEEL
+   9. SMOOTH HEADER SCROLL
 ========================== */
 let lastScroll = 0;
 window.addEventListener("scroll", () => {
@@ -148,3 +172,18 @@ window.addEventListener("scroll", () => {
 
   header.style.transform = `translateY(${Math.min(delta * -0.4, 0)}px)`;
 });
+
+/* ==========================
+   10. GRAPH HOVER FEEL
+   (Quote Report)
+========================== */
+const chart = $(".chart-container");
+if (chart) {
+  chart.addEventListener("mousemove", () => {
+    chart.style.transform = "scale(1.01)";
+  });
+
+  chart.addEventListener("mouseleave", () => {
+    chart.style.transform = "scale(1)";
+  });
+}
