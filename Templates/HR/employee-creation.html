@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hrm Employee</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../Styling/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../Styling/hrm.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="erp-header">
+        <nav class="erp-navbar">
+            <!-- LEFT -->
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="../../Assets/nav-bar.png" alt="logo" class="w-75">
+                </div>
+
+                <div class="search-box">
+                    <i class="fa fa-search"></i>
+                    <input type="text" placeholder="Search task">
+                </div>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="nav-right">
+                <div class="nav-icons">
+                    <i class="fa-regular fa-envelope"></i>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <i class="fa-regular fa-bell"></i>
+                    <i class="fa-solid fa-download"></i>
+                    <i class="fa-regular fa-sun"></i>
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+
+                <div class="user-info">
+                    <img src="../../Assets/Guset-Avatar.png" alt="user">
+                    <div>
+                        <span class="name">Hoor Ahmed</span>
+                        <span class="email">Hoor20@mail.com</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- LAYOUT -->
+    <div class="erp-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="erp-sidebar">
+            <ul class="sidebar-menu">
+                <li class="active"><i class="fa-solid fa-chart-line"></i></li>
+                <li><i class="fa-solid fa-users"></i></li>
+                <li><i class="fa-solid fa-file-invoice"></i></li>
+                <li><i class="fa-solid fa-box"></i></li>
+                <li><i class="fa-solid fa-gear"></i></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="erp-content">
+
+            <!-- TOP BAR -->
+            <div class="erp-topbar">
+                <div class="topbar-right">
+                    <span class="company-name">Afaq Al SPL IT Co</span>
+                    <img src="../../Assets/header-logo.png" alt="company" class="company-logo">
+                    <img src="../../Assets/KSA.png" alt="translate" class="translate-icon">
+                </div>
+            </div>
+
+            <!-- PAGE HEADER -->
+            <div class="erp-page-header">
+                <h2 class="page-title">
+                    <i class="fa-solid fa-arrow-left"></i>
+                Create Employee
+                </h2>
+            
+            </div>
+            <div class="form-container">
+        <form>
+            <!-- Personal Details Section -->
+            <div class="form-section">
+                <h2 class="section-title">Personal Details</h2>
+                
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="name" placeholder="Entre Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact" class="form-label">Contact<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="contact" placeholder="Entre Contact">
+                        <div class="helper-text">Please use with country code (ex. +91)</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="dob" class="form-label">Date of Birth<span class="required">*</span></label>
+                        <input type="date" class="form-control" id="dob" placeholder="mm/dd/yyyy">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender" class="form-label">Gender<span class="required">*</span></label>
+                        <select class="form-select" id="gender">
+                            <option selected>Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="passport-country" class="form-label">Passport country<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="passport-country" placeholder="Entre Passport country">
+                    </div>
+                    <div class="form-group">
+                        <label for="passport" class="form-label">Passport<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="passport" placeholder="Entre Passport">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Details Section -->
+            <div class="cards-grid"></div>
+            <div class="form-section">
+                <h2 class="section-title">Location Details</h2>
+                
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="location-type" class="form-label">Location Type<span class="required">*</span></label>
+                        <select class="form-select" id="location-type">
+                            <option selected>Select Location Type</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="form-label">Country<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="country" placeholder="Entre Country">
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="state" class="form-label">State<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="state" placeholder="Entre State">
+                    </div>
+                    <div class="form-group">
+                        <label for="city" class="form-label">City<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="city" placeholder="Entre City">
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="zipcode" class="form-label">Zip code<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="zipcode" placeholder="Entre Zip code">
+                    </div>
+                    <div class="form-group">
+                        <label for="address" class="form-label">Address<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="address" placeholder="Entre Address">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Account Detail Section -->
+            <div class="form-section">
+                <h2 class="section-title">Bank Account Detail</h2>
+                
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="account-holder" class="form-label">Account Holder Name<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="account-holder" placeholder="Entre Account Holder Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="account-number" class="form-label">Account Number<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="account-number" placeholder="Entre Account Number">
+                        <div class="helper-text">Please use with country code (ex. +91)</div>
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="bank-name" class="form-label">Bank Name<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="bank-name" placeholder="Entre Bank Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="bank-code" class="form-label">Bank Identifier Code<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="bank-code" placeholder="Entre Bank Identifier Code">
+                    </div>
+                </div>
+
+                <div class="row-group">
+                    <div class="form-group">
+                        <label for="branch-location" class="form-label">Branch Location<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="branch-location" placeholder="Entre Branch Location">
+                    </div>
+                    <div class="form-group">
+                        <label for="tax-payer-id" class="form-label">Tax Payer Id<span class="required">*</span></label>
+                        <input type="text" class="form-control" id="tax-payer-id" placeholder="Entre Tax Payer Id">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Section -->
+            <div class="form-section">
+                <h2 class="section-title">Document</h2>
+                
+                <div class="file-upload-group">
+                    <div class="file-upload-item">
+                        <div class="file-upload-label">Certificate</div>
+                        <div class="file-upload-btn">
+                            <span class="browse">Browse...</span>
+                            <span class="file-status">No File Selected</span>
+                        </div>
+                    </div>
+                    <div class="file-upload-item">
+                        <div class="file-upload-label">CV</div>
+                        <div class="file-upload-btn">
+                            <span class="browse">Browse...</span>
+                            <span class="file-status">No File Selected</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="file-upload-group">
+                    <div class="file-upload-item">
+                        <div class="file-upload-label">Photos</div>
+                        <div class="file-upload-btn">
+                            <span class="browse">Browse...</span>
+                            <span class="file-status">No File Selected</span>
+                        </div>
+                    </div>
+                    <div class="file-upload-item">
+                        <div class="file-upload-label">Results</div>
+                        <div class="file-upload-btn">
+                            <span class="browse">Browse...</span>
+                            <span class="file-status">No File Selected</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <div class="button-container">
+                <button type="button" class="btn-next">Next</button>
+            </div>
+        </form>
+    </div>
+
+        </main>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="../../Scripting/bootstrap.bundle.min.js"></script>
+    <script src="../../Scripting/hrm.js"></script>
+</body>
+
+</html>
