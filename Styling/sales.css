@@ -7,7 +7,9 @@
   --erp-primary-light: #007F6D;
   --erp-accent: #00C4A7;
   --erp-bg: #f6f8f9;
+
   --erp-canceled:  #C10F12;
+  --erp-pending:#FFCB45;
 
   --modal-danger: #dc3545;
   --modal-border: #dee2e6;
@@ -281,7 +283,7 @@ body {
 
 .btn-create {
   background: var(--erp-primary);
-  color: white;
+  color: var(--erp-bg);
   border: none;
   padding: 12px 26px;
   border-radius: 10px;
@@ -312,7 +314,7 @@ body {
   border-radius: 10px;
   padding: 10px 16px;
   width: 280px;
-  background: white;
+  background: var(--erp-bg);
 }
 
 .search-wrapper input {
@@ -326,7 +328,7 @@ body {
   height: 46px;
   border-radius: 8px;
   background: var(--erp-primary);
-  color: white;
+  color: var(--erp-bg);
   border: none;
 }
 
@@ -335,7 +337,7 @@ body {
    11. TABLE
 ====================================================== */
 .table-container {
-  background: white;
+  background: var(--erp-bg);
   border-radius: 15px;
   border: 1px solid #dee2e6;
   overflow: hidden;
@@ -393,6 +395,33 @@ body {
 .icon-view   { color: #0d6efd; }
 
 
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 10px;
+  border-radius: 16px;
+
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--erp-bg);
+
+  min-width: 130px;
+}
+
+.status-submitted {
+  background-color: var(--erp-primary);
+}
+
+.status-canceled {
+  background-color: var(--erp-canceled);
+}
+
+.status-pending {
+  background-color: var(--erp-pending);
+}
+
 /* ======================================================
    13. PAGINATION
 ====================================================== */
@@ -406,12 +435,12 @@ body {
   border: 1px solid #dee2e6;
   border-radius: 8px;
   overflow: hidden;
-  background: white;
+  background: var(--erp-bg);
 }
 
 .pagination-btn {
   padding: 10px 20px;
-  background: white;
+  background: var(--erp-bg);
   color: var(--erp-primary-light);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -424,7 +453,7 @@ body {
 
 .pagination-btn.active {
   background: var(--erp-primary);
-  color: white;
+  color: var(--erp-bg);
 }
 
 
@@ -511,29 +540,6 @@ body {
   padding: 10px 35px;
   border-radius: 8px;
   border: none;
-}
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 10px 10px;
-  border-radius: 16px;
-
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--erp-bg);
-
-  min-width: 130px;
-}
-
-.status-submitted {
-  background-color: var(--erp-primary);
-}
-
-.status-canceled {
-  background-color: var(--erp-canceled);
 }
 
 
