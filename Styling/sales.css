@@ -10,6 +10,7 @@
 
   --erp-canceled:  #C10F12;
   --erp-pending:#FFCB45;
+  --erp-holding:#146F8F;
 
   --modal-danger: #dc3545;
   --modal-border: #dee2e6;
@@ -420,6 +421,10 @@ body {
 
 .status-pending {
   background-color: var(--erp-pending);
+}
+
+.status-holding {
+  background-color: var(--erp-holding);
 }
 
 /* ======================================================
