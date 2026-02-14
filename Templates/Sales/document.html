@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sales Cases</title>
+    <title>Sales Document</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -87,10 +87,10 @@
             <div class="erp-page-header">
                 <h2 class="page-title">
                     <i class="fa-solid fa-arrow-left"></i>
-                    Cases
+                    Document
                 </h2>
-                <button class="btn btn-create" data-bs-toggle="modal" data-bs-target="#createCasesModal">
-                    Create Cases
+                <button class="btn btn-create" data-bs-toggle="modal" data-bs-target="#createDocumentModal">
+                    Create Document
                 </button>
             </div>
 
@@ -112,9 +112,9 @@
                         <tr>
                             <th>Name</th>
                             <th>File</th>
-                            <th>Account</th>
                             <th>Status</th>
-                            <th>Priority</th>
+                            <th>Publish Date</th>
+                            <th>Expiration Date</th>
                             <th>Assign user</th>
                             <th>Action</th>
                         </tr>
@@ -124,19 +124,16 @@
 
                             <td>Technical Support</td>
                             <td>No File4</td>
-                            <td>XYZ Enterprises</td>
+
                             <td>
                                 <div class="status-badge status-submitted">
-                                    Assigned
+                                    Active
                                 </div>
                             </td>
-                            <td>
-                                <div class="status-badge status-holding">
-                                    Normal
-                                </div>
-                            </td>
+                            <td>06-03-2025</td>
+                            <td>28-02-2025</td>
 
-                            <td>Kirsten Benson</td>
+                            <td>Joseph Fiennes</td>
                             <td>
                                 <div class="action-icons">
                                     <i class="bi bi-trash icon-delete"></i>
@@ -144,24 +141,21 @@
                                     <i class="bi bi-eye icon-view"></i>
                                 </div>
                             </td>
+
                         </tr>
                         <tr>
 
                             <td>Technical Support</td>
                             <td>No File4</td>
-                            <td>XYZ Enterprises</td>
-                            <td>
-                                <div class="status-badge status-holding">
-                                    Pending
-                                </div>
-                            </td>
+
                             <td>
                                 <div class="status-badge status-canceled">
-                                    Low
+                                    Expired
                                 </div>
                             </td>
-
-                            <td>Kirsten Benson</td>
+                            <td>06-03-2025</td>
+                            <td>28-02-2025</td>
+                            <td>Joseph Fiennes</td>
                             <td>
                                 <div class="action-icons">
                                     <i class="bi bi-trash icon-delete"></i>
@@ -169,24 +163,21 @@
                                     <i class="bi bi-eye icon-view"></i>
                                 </div>
                             </td>
+
                         </tr>
                         <tr>
 
                             <td>Technical Support</td>
                             <td>No File4</td>
-                            <td>XYZ Enterprises</td>
+
                             <td>
                                 <div class="status-badge status-pending">
-                                    Closed
+                                    Draft
                                 </div>
                             </td>
-                            <td>
-                                <div class="status-badge status-submitted">
-                                    High
-                                </div>
-                            </td>
-
-                            <td>Kirsten Benson</td>
+                            <td>06-03-2025</td>
+                            <td>28-02-2025</td>
+                            <td>Joseph Fiennes</td>
                             <td>
                                 <div class="action-icons">
                                     <i class="bi bi-trash icon-delete"></i>
@@ -194,6 +185,7 @@
                                     <i class="bi bi-eye icon-view"></i>
                                 </div>
                             </td>
+
                         </tr>
 
                     </tbody>
@@ -213,11 +205,11 @@
             </div>
 
             <!-- Create Sales Account Modal -->
-            <div class="modal fade" id="createCasesModal" tabindex="-1" aria-hidden="true">
+            <div class="modal fade" id="createDocumentModal" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Create Case</h5>
+                            <h5 class="modal-title">Create Document</h5>
                             <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
                                 <i class="bi bi-x-lg"></i>
                             </button>
@@ -225,21 +217,11 @@
                         <div class="modal-body">
                             <form id="createAccountForm">
                                 <div class="row g-4">
-                                    <!-- Name & Quote -->
+                                    <!-- Name & acc -->
                                     <div class="col-md-6">
                                         <label class="form-label">Name <span class="required">*</span></label>
                                         <input type="text" class="form-control" placeholder="Entre Name">
                                     </div>
-
-                                    <div class="col-md-6">
-                                        <label class="form-label">Status <span class="required">*</span></label>
-                                        <select class="form-select">
-                                            <option selected disabled>Select Status</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Prioity & Acc -->
-
 
                                     <div class="col-md-6">
                                         <label class="form-label">Account <span class="required">*</span></label>
@@ -248,18 +230,14 @@
                                         </select>
                                     </div>
 
+                                    <!-- folder & type -->
+
+
                                     <div class="col-md-6">
-                                        <label class="form-label">Priority <span class="required">*</span></label>
+                                        <label class="form-label">Folder <span class="required">*</span></label>
                                         <select class="form-select">
-                                            <option selected disabled>Select Priority</option>
+                                            <option selected disabled>Select Folder</option>
                                         </select>
-                                    </div>
-
-
-                                    <!-- Contact & Type -->
-                                    <div class="col-md-6">
-                                        <label class="form-label">Contact <span class="required">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Entre Contact">
                                     </div>
 
                                     <div class="col-md-6">
@@ -269,21 +247,51 @@
                                         </select>
                                     </div>
 
-
-                                    <!--  Quote & attachments -->
+                                     <!-- date & status -->
+                                    <div class="col-md-6">
+                                        <label class="form-label"> Publish Date  <span class="required">*</span></label>
+                                        <input type="date" class="form-control" placeholder="mm\dd/yyyy">
+                                    </div>
 
                                     <div class="col-md-6">
-                                        <label class="form-label">Assigned User <span class="required">*</span></label>
+                                        <label class="form-label"> Expiration Date  <span class="required">*</span></label>
+                                        <input type="date" class="form-control" placeholder="mm\dd/yyyy">
+                                    </div>
+
+
+                                    <!-- Contact & Type -->
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Opportunities <span class="required">*</span></label>
                                         <select class="form-select">
-                                            <option selected disabled>Select Assigned User</option>
+                                            <option selected disabled>Select Opportunities</option>
                                         </select>
                                     </div>
 
+                                    
+                                    <div class="col-md-6">
+                                        <label class="form-label">Status <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Status</option>
+                                        </select>
+                                    </div>
+                                    
+
+                                    <!--  Quote & attachments -->
+
+                                 
                                     <div class="col-md-6">
                                         <label class="form-label">
                                             Attachments <span class="required">*</span>
                                         </label>
                                         <input type="file" class="form-control">
+                                    </div>
+
+                                       <div class="col-md-6">
+                                        <label class="form-label">Assigned User <span class="required">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Select Assigned User</option>
+                                        </select>
                                     </div>
 
 
