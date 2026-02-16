@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
     ".erp-navbar",
     ".erp-sidebar",
     ".erp-topbar",
+    ".header",
     ".erp-page-header",
     ".erp-tools",
     ".table-container",
