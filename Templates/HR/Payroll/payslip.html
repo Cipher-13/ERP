@@ -94,24 +94,32 @@
             <!-- TOOLS -->
             <div class="erp-tools">
                 <div class="date-section">
-                    <div class="file-upload-group">
-                        <!-- Month -->
-                        <div class="file-upload-item">
-                            <label class="file-upload-label" for="payslip-month">
-                                Month <span class="required">*</span>
-                            </label>
-                            <input type="month" id="payslip-month" class="form-control" placeholder="Select month">
-                        </div>
+                    
+    <!-- Filter Card -->
+    <div class="card-custom">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <label class="form-label">Start Date</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="mm-dd-y">
+                    <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">End Date</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="mm-dd-y">
+                    <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-3 mt-4">
+                <button class="btn-reset">Reset</button>
+                <button class="btn-apply">Apply Filter</button>
+            </div>
+        </div>
+    </div>
 
-                        <!-- Year -->
-                        <div class="file-upload-item">
-                            <label class="file-upload-label" for="payslip-year">
-                                Year <span class="required">*</span>
-                            </label>
-                            <input type="date" id="payslip-year" class="form-control" placeholder="Select year">
-                        </div>
 
-                    </div>
                 </div>
             </div>
 
