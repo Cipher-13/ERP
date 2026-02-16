@@ -296,8 +296,118 @@ body {
   background: var(--erp-primary-light);
 }
 
+.status-tabs {
+  display: flex;
+  gap: 60px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 6px;
+}
 
-/* ======================================================
+.status-tabs .tab {
+  position: relative;
+  padding: 10px 0;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.status-tabs .tab:hover {
+  color: var(--erp-primary);
+}
+
+.status-tabs .tab.active {
+  color: var(--erp-primary);
+}
+
+.status-tabs .tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--erp-primary);
+  border-radius: 2px;
+}
+🎯 النتيجة
+Tabs أفقية
+
+Active tab بلون ERP
+
+خط underline زي الصورة بالظبط
+
+جاهز للربط مع routing أو JS
+
+لو حابب:
+
+🔹 أعملها SPA routing بـ Vanilla JS
+
+🔹 أو Angular Router
+
+🔹 أو animation خفيفة للـ underline
+
+قولّي و أظبطهالك 👌
+
+
+You said:
+wanna active them while tabbing
+
+ChatGPT said:
+تمام 👌
+خلّينا نخلي الـ tabs تتفعّل (active) تلقائيًا أثناء التبديل (click / tabbing) باستخدام JavaScript بسيط + دعم الكيبورد.
+
+✅ HTML
+نفس الـ HTML مع إضافة tabindex عشان التabbing بالكيبورد
+
+<div class="status-tabs">
+  <a href="#total" class="tab active" tabindex="0">Total Status</a>
+  <a href="#present" class="tab" tabindex="0">Present</a>
+  <a href="#leave" class="tab" tabindex="0">Leave</a>
+</div>
+✅ CSS (إضافة focus)
+:root {
+  --erp-primary: #025B50;
+  --text-muted: #7a8699;
+}
+
+.status-tabs {
+  display: flex;
+  gap: 60px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 6px;
+}
+
+.tab {
+  position: relative;
+  padding: 10px 0;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.tab:hover,
+.tab:focus {
+  color: var(--erp-primary);
+}
+
+.tab.active {
+  color: var(--erp-primary);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--erp-primary);
+  border-radius: 2px;}
+  /* ======================================================
    10. TOOLS
 ====================================================== */
 .erp-tools {

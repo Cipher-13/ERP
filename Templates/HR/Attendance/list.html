@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Hrm Payslip</title>
+    <title>Hrm Attendance List</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -87,37 +87,61 @@
             <div class="erp-page-header">
                 <h2 class="page-title">
                     <i class="fa-solid fa-arrow-left"></i>
-                    Payslip
+                    Attendance List
                 </h2>
             </div>
 
             <!-- TOOLS -->
             <div class="erp-tools">
                 <div class="date-section">
-                    
-    <!-- Filter Card -->
-    <div class="card-custom">
-        <div class="row g-4">
-            <div class="col-md-6">
-                <label class="form-label">Month</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="mm-dd-y">
-                    <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">Year</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="mm-dd-y">
-                    <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
-                </div>
-            </div>
-            <div class="col-12 d-flex justify-content-end gap-3 mt-4">
-                <button class="btn-reset">Reset</button>
-                <button class="btn-apply">Apply Filter</button>
-            </div>
-        </div>
-    </div>
+
+                    <!-- Filter Card -->
+                    <div class="card-custom">
+                        <div class="row g-4">
+
+                            <div class="col-md-6">
+                                <label class="form-label">Type</label>
+                                <select class="form-select">
+                                    <option selected>Select Type</option>
+                                    <option value="1">Canceled</option>
+                                    <option value="2">Pending</option>
+                                    <option value="3">Holding</option>
+                                </select>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <label class="form-label">Month</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="mm-dd-y">
+                                    <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Bransh</label>
+                                <select class="form-select">
+                                    <option selected>Select Bransh</option>
+                                    <option value="1">Canceled</option>
+                                    <option value="2">Pending</option>
+                                    <option value="3">Holding</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Department</label>
+                                <select class="form-select">
+                                    <option selected>Select Department</option>
+                                    <option value="1">Canceled</option>
+                                    <option value="2">Pending</option>
+                                    <option value="3">Holding</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 d-flex justify-content-end gap-3 mt-4">
+                                <button class="btn-reset">Reset</button>
+                                <button class="btn-apply">Apply Filter</button>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>
@@ -128,9 +152,12 @@
             <!-- PAGE HEADER -->
             <div class="header d-flex justify-content-between">
                 <div class="erp-page-header">
-                    <h2 class="page-title">
-                        Find Emplyee Payslip
-                    </h2>
+                    <div class="status-tabs">
+                        <a href="#total" class="tab active" tabindex="0">Total Status</a>
+                        <a href="#present" class="tab" tabindex="0">Present</a>
+                        <a href="#leave" class="tab" tabindex="0">Leave</a>
+                    </div>
+
 
                 </div>
 

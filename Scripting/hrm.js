@@ -171,3 +171,25 @@ window.addEventListener("scroll", () => {
   header.style.transform = `translateY(${Math.min(delta * -0.4, 0)}px)`;
 });
 
+ /**Navigation tabs**/
+  const tabs = document.querySelectorAll('.status-tabs .tab');
+
+  tabs.forEach(tab => {
+    // mouse click
+    tab.addEventListener('click', () => {
+      setActive(tab);
+    });
+
+    // keyboard tab / enter / space
+    tab.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setActive(tab);
+      }
+    });
+  });
+
+  function setActive(activeTab) {
+    tabs.forEach(tab => tab.classList.remove('active'));
+    activeTab.classList.add('active');
+  }
