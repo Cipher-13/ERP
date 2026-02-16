@@ -16,7 +16,9 @@ window.addEventListener("load", () => {
     ".erp-page-header",
     ".erp-tools",
     ".table-container",
-
+    ".form-container",
+    ".form-section",
+    ".button-container"
     
   ];
 

@@ -19,9 +19,7 @@
 </head>
 
 <body>
-
-    <!-- HEADER -->
-    <header class="erp-header">
+<header class="erp-header">
         <nav class="erp-navbar">
             <!-- LEFT -->
             <div class="nav-left">
@@ -87,183 +85,181 @@
             <div class="erp-page-header">
                 <h2 class="page-title">
                     <i class="fa-solid fa-arrow-left"></i>
-                Create Employee
+                    Create Employee
                 </h2>
-            
             </div>
+
             <div class="form-container">
-        <form>
-            <!-- Personal Details Section -->
-            <div class="form-section">
-                <h2 class="section-title">Personal Details</h2>
-                
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="name" placeholder="Entre Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="contact" class="form-label">Contact<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="contact" placeholder="Entre Contact">
-                        <div class="helper-text">Please use with country code (ex. +91)</div>
-                    </div>
-                </div>
+                <form>
+                    <!-- ROW 1: Personal Details & Location Details -->
+                    <div class="form-section">
+                        <h2 class="section-title">Personal Details</h2>
+                        
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="name" placeholder="Entre Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact" class="form-label">Contact<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="contact" placeholder="Entre Contact">
+                                <div class="helper-text">Please use with country code (ex. +91)</div>
+                            </div>
+                        </div>
 
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="dob" class="form-label">Date of Birth<span class="required">*</span></label>
-                        <input type="date" class="form-control" id="dob" placeholder="mm/dd/yyyy">
-                    </div>
-                    <div class="form-group">
-                        <label for="gender" class="form-label">Gender<span class="required">*</span></label>
-                        <select class="form-select" id="gender">
-                            <option selected>Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                </div>
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="dob" class="form-label">Date of Birth<span class="required">*</span></label>
+                                <input type="date" class="form-control" id="dob" placeholder="mm/dd/yyyy">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender" class="form-label">Gender<span class="required">*</span></label>
+                                <select class="form-select" id="gender">
+                                    <option selected>Select Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
 
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="passport-country" class="form-label">Passport country<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="passport-country" placeholder="Entre Passport country">
-                    </div>
-                    <div class="form-group">
-                        <label for="passport" class="form-label">Passport<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="passport" placeholder="Entre Passport">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Location Details Section -->
-            <div class="cards-grid"></div>
-            <div class="form-section">
-                <h2 class="section-title">Location Details</h2>
-                
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="location-type" class="form-label">Location Type<span class="required">*</span></label>
-                        <select class="form-select" id="location-type">
-                            <option selected>Select Location Type</option>
-                            <option value="residential">Residential</option>
-                            <option value="commercial">Commercial</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="country" class="form-label">Country<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="country" placeholder="Entre Country">
-                    </div>
-                </div>
-
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="state" class="form-label">State<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="state" placeholder="Entre State">
-                    </div>
-                    <div class="form-group">
-                        <label for="city" class="form-label">City<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="city" placeholder="Entre City">
-                    </div>
-                </div>
-
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="zipcode" class="form-label">Zip code<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="zipcode" placeholder="Entre Zip code">
-                    </div>
-                    <div class="form-group">
-                        <label for="address" class="form-label">Address<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="address" placeholder="Entre Address">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bank Account Detail Section -->
-            <div class="form-section">
-                <h2 class="section-title">Bank Account Detail</h2>
-                
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="account-holder" class="form-label">Account Holder Name<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="account-holder" placeholder="Entre Account Holder Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="account-number" class="form-label">Account Number<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="account-number" placeholder="Entre Account Number">
-                        <div class="helper-text">Please use with country code (ex. +91)</div>
-                    </div>
-                </div>
-
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="bank-name" class="form-label">Bank Name<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="bank-name" placeholder="Entre Bank Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="bank-code" class="form-label">Bank Identifier Code<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="bank-code" placeholder="Entre Bank Identifier Code">
-                    </div>
-                </div>
-
-                <div class="row-group">
-                    <div class="form-group">
-                        <label for="branch-location" class="form-label">Branch Location<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="branch-location" placeholder="Entre Branch Location">
-                    </div>
-                    <div class="form-group">
-                        <label for="tax-payer-id" class="form-label">Tax Payer Id<span class="required">*</span></label>
-                        <input type="text" class="form-control" id="tax-payer-id" placeholder="Entre Tax Payer Id">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Document Section -->
-            <div class="form-section">
-                <h2 class="section-title">Document</h2>
-                
-                <div class="file-upload-group">
-                    <div class="file-upload-item">
-                        <div class="file-upload-label">Certificate</div>
-                        <div class="file-upload-btn">
-                            <span class="browse">Browse...</span>
-                            <span class="file-status">No File Selected</span>
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="passport-country" class="form-label">Passport country<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="passport-country" placeholder="Entre Passport country">
+                            </div>
+                            <div class="form-group">
+                                <label for="passport" class="form-label">Passport<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="passport" placeholder="Entre Passport">
+                            </div>
                         </div>
                     </div>
-                    <div class="file-upload-item">
-                        <div class="file-upload-label">CV</div>
-                        <div class="file-upload-btn">
-                            <span class="browse">Browse...</span>
-                            <span class="file-status">No File Selected</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="file-upload-group">
-                    <div class="file-upload-item">
-                        <div class="file-upload-label">Photos</div>
-                        <div class="file-upload-btn">
-                            <span class="browse">Browse...</span>
-                            <span class="file-status">No File Selected</span>
+                    <div class="form-section">
+                        <h2 class="section-title">Location Details</h2>
+                        
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="location-type" class="form-label">Location Type<span class="required">*</span></label>
+                                <select class="form-select" id="location-type">
+                                    <option selected>Select Location Type</option>
+                                    <option value="residential">Residential</option>
+                                    <option value="commercial">Commercial</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="country" class="form-label">Country<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="country" placeholder="Entre Country">
+                            </div>
                         </div>
-                    </div>
-                    <div class="file-upload-item">
-                        <div class="file-upload-label">Results</div>
-                        <div class="file-upload-btn">
-                            <span class="browse">Browse...</span>
-                            <span class="file-status">No File Selected</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Next Button -->
-            <div class="button-container">
-                <button type="button" class="btn-next">Next</button>
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="state" class="form-label">State<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="state" placeholder="Entre State">
+                            </div>
+                            <div class="form-group">
+                                <label for="city" class="form-label">City<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="city" placeholder="Entre City">
+                            </div>
+                        </div>
+
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="zipcode" class="form-label">Zip code<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="zipcode" placeholder="Entre Zip code">
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="form-label">Address<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="address" placeholder="Entre Address">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROW 2: Bank Account Detail & Document -->
+                    <div class="form-section">
+                        <h2 class="section-title">Bank Account Detail</h2>
+                        
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="account-holder" class="form-label">Account Holder Name<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="account-holder" placeholder="Entre Account Holder Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="account-number" class="form-label">Account Number<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="account-number" placeholder="Entre Account Number">
+                                <div class="helper-text">Please use with country code (ex. +91)</div>
+                            </div>
+                        </div>
+
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="bank-name" class="form-label">Bank Name<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="bank-name" placeholder="Entre Bank Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="bank-code" class="form-label">Bank Identifier Code<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="bank-code" placeholder="Entre Bank Identifier Code">
+                            </div>
+                        </div>
+
+                        <div class="row-group">
+                            <div class="form-group">
+                                <label for="branch-location" class="form-label">Branch Location<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="branch-location" placeholder="Entre Branch Location">
+                            </div>
+                            <div class="form-group">
+                                <label for="tax-payer-id" class="form-label">Tax Payer Id<span class="required">*</span></label>
+                                <input type="text" class="form-control" id="tax-payer-id" placeholder="Entre Tax Payer Id">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section ">
+                        <h2 class="section-title">Document</h2>
+                        
+                        <div class="file-upload-group">
+                            <div class="file-upload-item">
+                                <div class="file-upload-label">Certificate</div>
+                                <div class="file-upload-btn">
+                                    <span class="browse">Browse...</span>
+                                    <span class="file-status">No File Selected</span>
+                                </div>
+                            </div>
+                            <div class="file-upload-item">
+                                <div class="file-upload-label">CV</div>
+                                <div class="file-upload-btn">
+                                    <span class="browse">Browse...</span>
+                                    <span class="file-status">No File Selected</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="file-upload-group">
+                            <div class="file-upload-item">
+                                <div class="file-upload-label">Photos</div>
+                                <div class="file-upload-btn">
+                                    <span class="browse">Browse...</span>
+                                    <span class="file-status">No File Selected</span>
+                                </div>
+                            </div>
+                            <div class="file-upload-item">
+                                <div class="file-upload-label">Results</div>
+                                <div class="file-upload-btn">
+                                    <span class="browse">Browse...</span>
+                                    <span class="file-status">No File Selected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Next Button - Full Width -->
+                    <div class="button-container">
+                        <button type="button" class="btn-next">Next</button>
+                    </div>
+                    
+                </form>
             </div>
-        </form>
-    </div>
 
         </main>
 

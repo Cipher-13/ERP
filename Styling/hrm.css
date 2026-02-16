@@ -1198,4 +1198,24 @@ body {
             content: '';
         }
 
-        
+        /* ===============================
+   FORM SECTIONS GRID (2 x 2)
+================================ */
+
+.form-container > form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* عمودين */
+  gap: 30px;
+}
+
+/* نخلي زر Next ياخد عرض الصفحة */
+.form-container .button-container {
+  grid-column: 1 / -1;
+}
+
+/* Responsive: موبايل = عمود واحد */
+@media (max-width: 768px) {
+  .form-container > form {
+    grid-template-columns: 1fr;
+  }
+}

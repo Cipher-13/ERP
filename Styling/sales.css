@@ -8,13 +8,13 @@
   --erp-accent: #00C4A7;
   --erp-bg: #f6f8f9;
 
+  --erp-border: #03332C;
+  --erp-text-muted: #6c757d;
+  --erp-white: #ffffff;
+
   --erp-canceled: #C10F12;
   --erp-pending: #FFCB45;
   --erp-holding: #146F8F;
-
-  --modal-danger: #dc3545;
-  --modal-border: #dee2e6;
-  --modal-cancel: #6c757d;
 }
 
 
@@ -523,7 +523,20 @@ body {
 .form-select {
   border-radius: 8px;
   padding: 10px 15px;
-  border: 1px solid #ced4da;
+  border: 1px solid var(--erp-border);
+  color: var(--erp-text-muted);
+  box-shadow: none;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--erp-border);
+  box-shadow: none;
+  outline: none;
+}
+
+.form-control:hover,
+.form-select:hover {
+  border-color: var(--erp-primary-light);
 }
 
 .form-label {
